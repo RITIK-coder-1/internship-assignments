@@ -7,8 +7,8 @@ import Header from "../components/sections/Header"; // imported the header secti
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Internship 2",
-  description: "My second project for Internship",
+  title: "Internship 2", // the title of the page
+  description: "My second project for Internship", // additional metadata
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-       <Header /> // the common header section
+       <Header /> {/* the common header section */}
       {children}
       </body>
     </html>

@@ -1,14 +1,15 @@
 import Image from "next/image" // image from next
 import Link from "next/link" // link from next
+import Button from "../common/Button"
 
 // This Header component is common to the entire layout of the webpage
 
 export default function Header() {
   return (
-    <header className="w-full h-auto py-4 md:px-12 flex justify-center items-center fixed z-[100] transition-all duration-300 bg-[#0F0F0F]" style={{boxShadow: "rgba(102, 116, 204, 0.25) 0px 4px 10px"}}>
+    <header className="w-full h-auto py-4 md:px-[3.2rem] flex justify-center items-center fixed z-[100] transition-all duration-300 bg-[#0F0F0F]" style={{boxShadow: "rgba(102, 116, 204, 0.25) 0px 4px 10px"}}>
       
       {/* Navigation container with flexbox properties and inner spacing */}
-      <nav className="w-[95%] h-[45px] max-w-maxScreen flex justify-between items-center md:px-1">
+      <nav className="w-[95%] h-[45px] max-w-maxScreen flex justify-between items-center">
         
         {/* Logo link container */}
         <a className="flex justify-start items-center">
@@ -17,7 +18,8 @@ export default function Header() {
             alt="Code Help Logo" // Alt text for the logo image
             width={250} // Width of the image
             height={250} // Height of the image
-          />
+            unoptimized
+          /> {/* It is an animated image, so it won't be optimised. It's better to explicitly define it. */}
         </a>
         
         {/* Navigation links container (hidden on smaller screens, visible on large screens) */}
@@ -36,10 +38,8 @@ export default function Header() {
         </ul>
         
         {/* Get Started button container (hidden on smaller screens, visible on large screens) */}
-        <div className="lg:flex items-center hidden font-rubik gap-x-2">
-          <button className="text-white bg-indigo-500 hover:bg-indigo-600 flex justify-center items-center py-3 rounded-full font-medium text-md transition-all duration-150 w-[130px]">
-            Get Started
-          </button>
+        <div className="lg:flex items-center hidden gap-x-2">
+          <Button content="Get Started" bgColor="#6674CC" className="hover:bg-[#515DB1]"/>
         </div>
         
         {/* Hamburger menu icon for small screens */}
