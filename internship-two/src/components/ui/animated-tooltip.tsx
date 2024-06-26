@@ -1,4 +1,7 @@
 "use client";
+
+// animated tooltip code -->
+
 import Image from "next/image";
 import React, { useState } from "react";
 import {
@@ -90,3 +93,4 @@ export const AnimatedTooltip = ({
     </>
   );
 };
+

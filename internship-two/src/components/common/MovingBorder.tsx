@@ -1,8 +1,9 @@
-"use client"
+"use client";
 
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components'; // imported from styled-components
 
+// the keyframes for the background color change
 const changeBackgroundColor = keyframes`
   0% {
     background-color: #f3ec78;
@@ -21,11 +22,12 @@ const changeBackgroundColor = keyframes`
   }
 `;
 
+// the styles for the parent div
 const ColorChangingDiv = styled.div`
   width: 300px;
   height: 60px;
   background-color: #f3ec78; /* Initial background color */
-  animation: ${changeBackgroundColor} 2s linear infinite; /* Change color over 10 seconds */
+  animation: ${changeBackgroundColor} 2s linear infinite; /* Change color over 2 seconds */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,6 +35,7 @@ const ColorChangingDiv = styled.div`
   border-radius: 8px;
 `;
 
+// the styles for the nested div
 const NestedDiv = styled.div`
   width: 100%;
   height: 100%;
@@ -48,12 +51,21 @@ const NestedDiv = styled.div`
   border-radius: 8px;
   padding-top: 12px;
   padding-bottom: 12px;
+
+  &:hover {
+    background-color: #111827;
+  }
 `;
 
-const App = ({content}) => {
+// the props for the App component using TypeScript
+interface AppProps {
+  content: string;
+}
+
+const App: React.FC<AppProps> = ({ content }) => {
   return (
     <ColorChangingDiv>
-      <NestedDiv className="hover:bg-[#111827]">
+      <NestedDiv>
         {content}
       </NestedDiv>
     </ColorChangingDiv>

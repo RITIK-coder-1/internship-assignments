@@ -1,11 +1,9 @@
 import React from "react";
-import { AnimatedTooltip, TooltipItem } from "../ui/animated-tooltip"; // Assuming TooltipItem is the type/interface for items
-import people from "../../data/users"; // Assuming people is an array of TooltipItem
+import { AnimatedTooltip } from "../ui/animated-tooltip"; // imported from tooltip animation
+import people from "../../data/users"; // Imported the data of the users
 
-// Define the type/interface for TooltipProps if necessary
-interface TooltipProps {}
 
-const Tooltip: React.FC<TooltipProps> = () => {
+const Tooltip = () => {
   return (
     <div className="flex flex-row items-center justify-center w-auto h-full">
       <AnimatedTooltip items={people} />
