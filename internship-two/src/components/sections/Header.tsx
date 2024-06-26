@@ -1,6 +1,6 @@
 import Image from "next/image" // image from next
 import Link from "next/link" // link from next
-import Button from "../common/Button"
+import Button from "../common/Button" // imported the common button
 
 // This Header component is common to the entire layout of the webpage
 
@@ -39,7 +39,7 @@ export default function Header() {
         
         {/* Get Started button container (hidden on smaller screens, visible on large screens) */}
         <div className="lg:flex items-center hidden gap-x-2">
-          <Button content="Get Started" bgColor="#6674CC" className="hover:bg-[#515DB1]"/>
+          <Button content="Get Started" bgColor="#6674CC" hoverBgColor="#515DB1"/>
         </div>
         
         {/* Hamburger menu icon for small screens */}

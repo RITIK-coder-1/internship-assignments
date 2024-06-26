@@ -1,22 +1,26 @@
-import React from 'react'; // Importing React
+"use client"
 
-// This is a common button prop
+
+import React from 'react'; // Importing React
 
 // Creating the props interface using TypeScript
 interface ButtonProps {
-  bgColor: string;
+  bgColor?: string;
   borderColor?: string;
   content: string;
+  hoverBgColor?: string;
   className?: string;
 }
 
 // Button component definition using React.FC and the ButtonProps interface
-const Button: React.FC<ButtonProps> = ({ bgColor, borderColor, content, className }) => {
+const Button: React.FC<ButtonProps> = ({ bgColor, borderColor, content, hoverBgColor, className }) => {
   return (
     <button 
-      className={`text-white flex justify-center items-center py-3 rounded-full font-medium text-md transition-all duration-150 w-[8.1rem] ${className}`} // Conditional className inclusion
-      style={{ backgroundColor: bgColor, borderColor: borderColor || 'transparent' }} // Inline styles for background and border color
-    >
+      className={`text-white flex justify-center items-center py-3 rounded-full font-medium text-md transition-all duration-150 w-[8.1rem] ${className}`}
+      style={{ backgroundColor: bgColor, borderColor: borderColor || 'transparent' }}
+      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = hoverBgColor)}
+      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = bgColor)}
+    > {/* Tailwind wasn't recognising the hover effect dynamically, so I had to include it using the JS event object */}
       {content} {/* Button content */}
     </button>
   );
