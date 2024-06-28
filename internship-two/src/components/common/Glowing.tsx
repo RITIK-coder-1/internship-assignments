@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const Glowing: React.FC = () => {
   return (
-    <div className="relative flex items-start justify-center z-10 left-20">
+    <div className="relative flex items-start justify-center z-10 left-2 md:left-20">
       <div className="bg-blue-900 w-10 h-5/6 z-0 blur-2xl absolute border border-solid border-red-900" /> {/* THis div is for providing the background shine effect behind the animation */}
       <motion.div
         className="absolute w-[0.1rem] bg-[#6674CC] rounded-full z-10"

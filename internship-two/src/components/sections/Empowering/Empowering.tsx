@@ -1,9 +1,12 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
-import './Card.css'; // Import the plain CSS file
+// THis is the followers card component that gives a 3d effect on hover
 
-const Card: React.FC = () => {
+import React, { useEffect, useRef } from 'react';
+import './empowering.css'; // Imported the plain CSS file
+import Button from '../../common/Button'; // Imported the plain CSS file
+
+const Empowering: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
   const boundsRef = useRef<DOMRect | null>(null);
 
@@ -44,16 +47,16 @@ const Card: React.FC = () => {
             circle at
             ${center.x + bounds.width / 2}px
             ${center.y + bounds.height / 2}px,
-            rgba(123, 143, 217, 0.3),
+            rgba(14, 65, 30, 0.6),
             transparent
           )
         `;
       }
 
       // Determine which border(s) to change
-      const borderColor = '#7B8FD9';
+      const borderColor = '#24BF5A';
       const transparent = 'transparent';
-      const glowBorderColor = 'rgba(123, 143, 217, 0.7)'; // Adjust intensity here
+      const glowBorderColor = '#24BF5A'; 
 
       if (center.x < 0 && center.y < 0) {
         // Top-left
@@ -143,22 +146,13 @@ const Card: React.FC = () => {
     <section id="section"> {/* ID is specified so that the CSS is applied to this specific section only */}
       <div className="card" ref={cardRef}>
         <div>
-          <div>
-            <span className="numbers">1 M+</span>
-            <a className="paragraph" href="/">Subscribers on Youtube</a>
+        <div id="empowering">
+              <span style={{color: "#22BD59", fontSize: "1.125rem"}}>Who Are We</span>
+              <h2>Empowering Coders, <br /> Enabling Dreams</h2>
+              <span style={{color: "#808E99", fontSize: "1rem"}}>Unveil the essence of CodeHelp: a community-driven <br /> platform dedicated to empowering coders of all levels. <br /> Discover who we are and how we're shaping the future of <br /> coding education.</span>
+              <Button content="Let's Connect" bgColor="#6674CC" hoverBgColor="#515DB1" className="w-[165px] text-base font-semibold mt-12"/>
           </div>
-          <div>
-            <span className="numbers">6 K+</span>
-            <a className="paragraph">Followers on Twitter</a>
-          </div>
-          <div>
-            <span className="numbers">135 K+</span>
-            <a className="paragraph">Followers on Instagram</a>
-          </div>
-          <div>
-            <span className="numbers">522 K+</span>
-            <a className="paragraph">Followers on LinkedIn</a>
-          </div>
+          <div id="carousel"></div>
         </div>
         <div className="glow" />
       </div>
@@ -166,4 +160,4 @@ const Card: React.FC = () => {
   );
 };
 
-export default Card;
+export default Empowering;

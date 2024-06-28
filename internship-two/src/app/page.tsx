@@ -1,11 +1,15 @@
 import Hero from "../components/sections/Hero"
-import Card from "../components/common/3dCard"
+import Followers from "../components/sections/Followers/Followers"
+import CodeLearning from "../components/sections/CodeLearning/CodeLearning"
+import Empowering from "../components/sections/Empowering/Empowering"
 
 export default function Home() {
   return(
     <>
         <Hero />
-        <Card />
+        <Followers />
+        <CodeLearning />
+        <Empowering />
     </>
     )
 }

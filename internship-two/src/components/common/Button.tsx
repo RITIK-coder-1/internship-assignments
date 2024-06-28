@@ -15,7 +15,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({ bgColor = 'transparent', borderColor = 'transparent', content, hoverBgColor = bgColor, className }) => {
   return (
     <button 
-      className={`text-white flex justify-center items-center py-3 rounded-full font-medium text-md transition-all duration-150 w-[8.1rem] ${className}`}
+      className={`text-white flex justify-center cursor-pointer items-center py-3 rounded-full font-medium text-md transition-all duration-150 w-[8.1rem] ${className}`}
       style={{ backgroundColor: bgColor, borderColor: borderColor }}
       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = hoverBgColor)}
       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = bgColor)}
