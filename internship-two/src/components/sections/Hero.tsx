@@ -9,7 +9,7 @@ export default function Hero() {
   <section className="w-full h-[100%] flex">
     <Glowing />
     <GridBackground />
-    <div className="absolute w-full h-[96%] flex md:flex-row flex-col items-center md:gap-[4.4rem] gap-[1rem] px-[5rem] z-[1000] mt-12">
+    <div className="absolute w-full h-[96%] flex md:flex-row flex-col items-center md:gap-[3.8rem] gap-[1rem] px-[5rem] z-[10] mt-3">
         <div className="flex flex-col gap-16 mx-auto max-w-[500px] mt-4 md:mx-0 ">
           <div className="flex flex-col gap-y-4 pt-5">
             <h1 className="text-gray-50 text-4xl text-center md:text-left md:text-[2.5rem] font-semibold">Crack the Code to Success with CodeHelp

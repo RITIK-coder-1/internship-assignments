@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+#section{
+  width: 100%;
+  height: auto;
+  padding: 45px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card, .card > div {
+  font-weight: bold;
+  padding: 1em;
+  text-align: right;
+  color: #181a1a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  
+  width: 80%;
+  height: 200px;
+  box-shadow: 0 1px 5px #00000099;
+  
+  border-radius: 10px;
+  background-size: cover;
+  
+  position: relative;
+  
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+  overflow: hidden;
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.card > div{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  border: none;
+  box-shadow: none;
+}
+
+.card > div > div{
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    gap: 0.25rem;
+    width: auto;
+    height: auto;
+}
+
+.numbers{
+  color: white;
+  font-size: 1.875rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.paragraph{
+  font-size: 1rem;
+  color: #9ca3af;
+  font-weight: 450;
+  font-family: Open Sans;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card .glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  z-index: 0;
+}
+
+.card:hover {
+  transition-duration: 150ms;
+  box-shadow: 0 5px 20px 5px #00000044;
+}
+
+.paragraph:hover{
+  text-decoration: underline;
+  color: #495491;
+}

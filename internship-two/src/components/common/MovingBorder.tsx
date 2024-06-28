@@ -27,7 +27,7 @@ const ColorChangingDiv = styled.div`
   width: 300px;
   height: 60px;
   background-color: #f3ec78; /* Initial background color */
-  animation: ${changeBackgroundColor} 2s linear infinite; /* Change color over 2 seconds */
+  animation: ${changeBackgroundColor} 5s ease-in-out infinite; /* Change color over 2 seconds */
   display: flex;
   justify-content: center;
   align-items: center;
