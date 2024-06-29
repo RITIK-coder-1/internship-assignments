@@ -4,7 +4,7 @@ import { FaDatabase, FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react
 export default function Circle() {
   return (
     <> 
-      <section className="py-20">
+      <section className="py-20 bg-[#020817]">
         <Heading 
           headingContent="Master Integration Like A Pro" 
           paraContent1="Welcome to Nextbase Ultimate Landing Page: Your Gateway to Innovation. Discover the Future of" 

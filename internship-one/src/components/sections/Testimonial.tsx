@@ -30,7 +30,7 @@ const settings = {
 
 export default function Testimonial() {
   return (
-    <section className="py-20 bg-[#1E293B] flex flex-col gap-2">
+    <section className="py-20 flex flex-col gap-2 bg-[#020817]">
       <h2 className="text-white text-center font-bold text-4xl font-sans">
         Don&apos;t Take Our Word For It
       </h2>

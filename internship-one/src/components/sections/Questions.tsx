@@ -23,7 +23,7 @@ export default function Questions() {
   }, []);
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-[#020817]">
       {/* Common Heading */}
       <Heading
         buttonContent="? FAQ ->"

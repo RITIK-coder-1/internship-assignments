@@ -17,7 +17,7 @@ export default function Price() {
   };
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-[#020817]">
       {/* Heading component with props */}
       <Heading 
         buttonContent="$ Pricing ->" 

@@ -20,7 +20,7 @@ interface ButtonProps {
  * @returns {JSX.Element} - Rendered JSX element for the button.
  */
 
-const Button: React.FC<ButtonProps> = ({ height, width, content, bgColor, color, radius, className }) => {
+const Button: React.FC<ButtonProps> = ({ height, width, content = "Log in ->", bgColor, color = "black", radius, className }) => {
   return (
     <button
       style={{

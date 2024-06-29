@@ -1,15 +1,10 @@
-/**
- * Company component that shows the list of connected companies.
- * Includes Google, Microsoft, Spotify, etc.
- * @returns {JSX.Element} Rendered JSX element for the header.
- */
-
 'use client';
 
 // Imported all the dependencies
 import dynamic from 'next/dynamic';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image" // image from next
 
 // Dynamically imported the Slider component
 const Slider = dynamic(() => import('react-slick'), { ssr: false });
@@ -29,26 +24,28 @@ const settings = {
 
 export default function CardCarousel() {
   return (
-    <Slider {...settings}>
-      {/* Each image wrapped in a div with padding */}
-      <div className="px-2">
-        <img src="/images/google.png" alt="Google Logo" className="w-68 h-12" />
-      </div>
-      <div className="px-2">
-        <img src="/images/airbnb.png" alt="Airbnb Logo" className="w-68 h-12" />
-      </div>
-      <div className="px-2">
-        <img src="/images/mail.png" alt="Mail Logo" className="w-68 h-12" />
-      </div>
-      <div className="px-2">
-        <img src="/images/Spotify.png" alt="Spotify Logo" className="w-68 h-12" />
-      </div>
-      <div className="px-2">
-        <img src="/images/mashable.png" alt="Mashable Logo" className="w-68 h-12" />
-      </div>
-      <div className="px-2">
-        <img src="/images/MS.png" alt="Microsoft Logo" className="w-68 h-12" />
-      </div>
-    </Slider>
+    <div className="bg-[#020817]">
+      <Slider {...settings}>
+        {/* Each image wrapped in a div with padding */}
+        <div className="px-2 bg-[#020817]">
+          <Image src="/images/google.png" alt="Google Logo" width={272} height={48} />
+        </div>
+        <div className="px-2 bg-[#020817]">
+          <Image src="/images/airbnb.png" alt="Airbnb Logo" width={272} height={48} />
+        </div>
+        <div className="px-2 bg-[#020817]">
+          <Image src="/images/mail.png" alt="Mail Logo" width={272} height={48} />
+        </div>
+        <div className="px-2 bg-[#020817]">
+          <Image src="/images/Spotify.png" alt="Spotify Logo" width={272} height={48} />
+        </div>
+        <div className="px-2 bg-[#020817]">
+          <Image src="/images/mashable.png" alt="Mashable Logo" width={272} height={48} />
+        </div>
+        <div className="px-2 bg-[#020817]">
+          <Image src="/images/MS.png" alt="Microsoft Logo" width={272} height={48} />
+        </div>
+      </Slider>
+    </div>
   );
 }

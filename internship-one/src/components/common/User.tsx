@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from "next/image" // image from next
+import { FaUserSecret } from "react-icons/fa6";
 
 // type safety user prop
 
@@ -15,13 +17,11 @@ interface UserProps {
 const User: React.FC<UserProps> = ({ marg }) => {
   return (
     <div
-      className="bg-[#020817] w-[60%] h-auto rounded-xl p-4 flex items-start flex-col my-5"
+      className="bg-[#020817] border border-solid border-[#020800] w-[60%] h-auto rounded-xl p-4 flex items-start flex-col my-5"
       style={{ marginLeft: marg }}
     >
       <div className="w-full text-white flex justify-start mb-2">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/b/bd/Doraemon_character.png"
-          alt="User"
+        <FaUserSecret
           className="w-12 h-12 rounded-full mr-4"
         />
         <div className="flex flex-col">

@@ -3,6 +3,7 @@
 import React from 'react';
 import Button from "../common/Button"; // Imported the button component
 import Heading from "../common/Heading" // Imported the common heading component
+import Image from "next/image" // image from next
 
 /**
  * Hero component that is the main highlight of the landing page.
@@ -16,7 +17,7 @@ import Heading from "../common/Heading" // Imported the common heading component
 export default function Hero() {
   return (
     <>
-      <section className="w-screen h-[1023px] flex flex-col justify-center items-start md:items-center gap-24 md:gap-5 px-2">
+      <section className="w-screen h-[1023px] flex flex-col justify-center items-start md:items-center gap-24 md:gap-5 px-2 bg-[#020817]">
         {/* Main container for the hero section */}
         
         <div className="w-5/6 h-[240px] flex flex-col justify-center items-start md:items-center gap-3">
@@ -47,7 +48,7 @@ export default function Hero() {
           </div>
         </div>
         
-        <img 
+        <Image 
           src="/images/hero.png" 
           alt="hero image" 
           className="w-5/2 h-[514px]" 

@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <>
       {/* Header Element */}
-      <header className="h-[54px] w-screen">
+      <header className="h-[54px] w-screen bg-[#020817]">
         
         {/* Navigation Bar */}
         <nav className="h-full w-full border-b border-b-[#1E293B] flex justify-between gap-10">
