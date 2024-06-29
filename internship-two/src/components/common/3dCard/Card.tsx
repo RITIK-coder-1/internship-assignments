@@ -1,12 +1,30 @@
 "use client";
 
-// THis is the followers card component that gives a 3d effect on hover
+// This is the common three-dimensional card component that gives a 3d effect on hover
 
 import React, { useEffect, useRef } from 'react';
-import './empowering.css'; // Imported the plain CSS file
-import Button from '../../common/Button'; // Imported the plain CSS file
+import './card.css'; // Imported the plain CSS file
+import Button from '../Button'; // Imported the common button
+import Carousel from './Carousel'
+import { FaRocket } from "react-icons/fa";
+import { SlGraph } from "react-icons/sl";
 
-const Empowering: React.FC = () => {
+// defined the props in typescript
+
+interface CardPROPS{
+    title: string;
+    heading1: string;
+    heading2: string;
+    paragraph1: string;
+    paragraph2?: string;
+    paragraph3?: string;
+    color: string;
+    glowColor: string;
+    borderColor: string;
+    reverse: boolean; // this is for reversing the order of the two main div elements
+}
+
+const Card: React.FC<CardPROPS> = ({title, heading1, heading2, paragraph1, paragraph2, paragraph3, paragraph4, color, glowColor, borderColor, reverse, margin}) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const boundsRef = useRef<DOMRect | null>(null);
 
@@ -45,18 +63,18 @@ const Empowering: React.FC = () => {
         glow.style.backgroundImage = `
           radial-gradient(
             circle at
-            ${center.x + bounds.width / 2}px
-            ${center.y + bounds.height / 2}px,
-            rgba(14, 65, 30, 0.6),
+            ${center.x * 2 + bounds.width/2}px
+            ${center.y * 2 + bounds.width/2}px,
+            ${glowColor},
             transparent
           )
         `;
       }
 
       // Determine which border(s) to change
-      const borderColor = '#24BF5A';
+      const border_Color = borderColor;
       const transparent = 'transparent';
-      const glowBorderColor = '#24BF5A'; 
+      const glowBorderColor = borderColor; 
 
       if (center.x < 0 && center.y < 0) {
         // Top-left
@@ -144,15 +162,36 @@ const Empowering: React.FC = () => {
 
   return (
     <section id="section"> {/* ID is specified so that the CSS is applied to this specific section only */}
+      <div 
+           className="w-20 h-20 bg-[#0F0F0F] rounded-full flex justify-center items-center"
+           style={{
+           position: "relative",
+           left: reverse ? "40%" : "auto",
+           right: reverse ? "auto" : "40%",
+           top: "10px",
+           zIndex: 200,
+           border: `1px solid ${borderColor}`,
+           }}>
+           {
+            reverse ?
+            <SlGraph className="w-8 h-8 my-2" id="rocket" style={{
+            color: `${borderColor}`}}/> :
+            <FaRocket className="w-8 h-8 my-2" id="rocket" style={{
+            color: `${borderColor}`}}/>
+           }
+          
+      </div>
       <div className="card" ref={cardRef}>
-        <div>
-        <div id="empowering">
-              <span style={{color: "#22BD59", fontSize: "1.125rem"}}>Who Are We</span>
-              <h2>Empowering Coders, <br /> Enabling Dreams</h2>
-              <span style={{color: "#808E99", fontSize: "1rem"}}>Unveil the essence of CodeHelp: a community-driven <br /> platform dedicated to empowering coders of all levels. <br /> Discover who we are and how we're shaping the future of <br /> coding education.</span>
-              <Button content="Let's Connect" bgColor="#6674CC" hoverBgColor="#515DB1" className="w-[165px] text-base font-semibold mt-12"/>
+        <div style={{ flexDirection: reverse ? "row-reverse" : "row" }}>
+          <div id="carousel">
+              <Carousel />
           </div>
-          <div id="carousel"></div>
+          <div id="connect">
+              <span style={{color: color, fontSize: "1.125rem"}}> {title} </span>
+              <h2> {heading1} <br /> {heading2} </h2>
+              <span style={{color: "#808E99", fontSize: "0.99rem", marginBottom: reverse ? "50px" : "20px"}}> {paragraph1} <br /> {paragraph2} <br /> {paragraph3} </span>
+              <Button content="Let&apos;s Connect" bgColor="#6674CC" hoverBgColor="#515DB1" className="w-[170px] text-base font-semibold"/>
+          </div>
         </div>
         <div className="glow" />
       </div>
@@ -160,4 +199,4 @@ const Empowering: React.FC = () => {
   );
 };
 
-export default Empowering;
+export default Card;
