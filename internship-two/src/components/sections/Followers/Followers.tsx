@@ -4,6 +4,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import './followers.css'; // Imported the plain CSS file
+import ConcentricCircles from "../../common/ConcentricCircles"
 
 const Followers: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -164,6 +165,7 @@ const Followers: React.FC = () => {
         </div>
         <div className="glow" />
       </div>
+      <ConcentricCircles />
     </section>
   );
 };

@@ -37,6 +37,7 @@
   overflow: hidden;
   background: transparent;
   border: 1px solid transparent;
+  z-index: 10;
 }
 
 .card > div {

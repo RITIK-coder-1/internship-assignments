@@ -24,7 +24,7 @@ interface CardPROPS{
     reverse: boolean; // this is for reversing the order of the two main div elements
 }
 
-const Card: React.FC<CardPROPS> = ({title, heading1, heading2, paragraph1, paragraph2, paragraph3, paragraph4, color, glowColor, borderColor, reverse, margin}) => {
+const Card: React.FC<CardPROPS> = ({title, heading1, heading2, paragraph1, paragraph2, paragraph3, color, glowColor, borderColor, reverse}) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const boundsRef = useRef<DOMRect | null>(null);
 
@@ -158,7 +158,7 @@ const Card: React.FC<CardPROPS> = ({title, heading1, heading2, paragraph1, parag
       $card.removeEventListener('mouseenter', handleMouseEnter);
       $card.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, []);
+  }, [borderColor, glowColor]);
 
   return (
     <section id="section"> {/* ID is specified so that the CSS is applied to this specific section only */}
@@ -169,7 +169,7 @@ const Card: React.FC<CardPROPS> = ({title, heading1, heading2, paragraph1, parag
            left: reverse ? "40%" : "auto",
            right: reverse ? "auto" : "40%",
            top: "10px",
-           zIndex: 200,
+           zIndex: 15,
            border: `1px solid ${borderColor}`,
            }}>
            {
