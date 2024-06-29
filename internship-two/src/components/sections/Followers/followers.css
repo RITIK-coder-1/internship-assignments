@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Open Sans', sans-serif; /* Fallback to sans-serif if Open Sans fails to load */
+}
+
 #section {
   width: 100%;
   height: auto;
@@ -64,14 +68,14 @@
 .numbers {
   color: white;
   font-size: 1.875rem;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .paragraph {
   font-size: 1rem;
   color: #9ca3af;
   font-weight: 450;
-  font-family: Open Sans;
+  font-family: 'Open Sans', sans-serif;
   text-decoration: none;
   cursor: pointer;
 }
