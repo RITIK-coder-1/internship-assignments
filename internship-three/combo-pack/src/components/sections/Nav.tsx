@@ -1,22 +1,20 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu";
-import { cn } from "@/utils/cn";
+import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu"; // Ensure this import path is correct
+import { cn } from "@/utils/cn"; // Ensure this import path is correct
 
-export default function Nav() {
+export default function Nav({ darkMode, className }: { darkMode: boolean, className: string }) {
   return (
-      <Navbar />
+    <Navbar darkMode={darkMode} className={className}/>
   );
 }
 
 function Navbar({ className, darkMode }: { className?: string, darkMode: boolean }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div
-      className={cn("h-full", className)}
-    >
+    <div className={cn("h-full", className)}>
       <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Home">
+        <MenuItem setActive={setActive} active={active} item="Home" darkMode={darkMode}>
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/">Modern Data Engineering</HoveredLink>
             <HoveredLink href="/">Courses</HoveredLink>
@@ -53,12 +51,12 @@ function Navbar({ className, darkMode }: { className?: string, darkMode: boolean
             />
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Playground">
+        <MenuItem setActive={setActive} active={active} item="Playground" darkMode={darkMode}>
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/">Coming soon</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="All Courses">
+        <MenuItem setActive={setActive} active={active} item="All Courses" darkMode={darkMode}>
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/">Python for Data Engineering</HoveredLink>
             <HoveredLink href="/">SQL for Data Engineering</HoveredLink>

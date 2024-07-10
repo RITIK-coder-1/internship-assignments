@@ -26,12 +26,15 @@ export const MenuItem = ({
   children?: React.ReactNode;
   darkMode: boolean;
 }) => {
+  const itemStyle = item === "Combo Pack"
+    ? darkMode ? "text-white" : "text-black"
+    : "text-[#8A90A2] hover:text-rose-400";
 
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">
       <motion.p
         transition={{ duration: 0.3 }}
-        className={`cursor-pointer hover:opacity-90 ${item === "Combo Pack" ? "text-white" : "text-[#8A90A2] hover:text-white"}`}
+        className={`cursor-pointer hover:opacity-90 ${itemStyle}`}
       >
         {item}
       </motion.p>
@@ -45,11 +48,11 @@ export const MenuItem = ({
             <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
               <motion.div
                 transition={{ duration: 0.3 }}
-                layoutId="active" // layoutId ensures smooth animation
+                layoutId="active"
                 className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
               >
                 <motion.div
-                  layout // layout ensures smooth animation
+                  layout
                   className="w-max h-full p-4"
                 >
                   {children}
@@ -72,7 +75,7 @@ export const Menu = ({
 }) => {
   return (
     <nav
-      onMouseLeave={() => setActive(null)} // resets the state
+      onMouseLeave={() => setActive(null)}
       className="flex items-center gap-12 text-[18px] font-base text-[#8A90A2] grow h-full"
     >
       {children}
@@ -114,11 +117,17 @@ export const ProductItem = ({
 
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
-    <Link
-      {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-[#8A90A2]"
+    <motion.div
+      whileHover={{ x: 5 }}
+      transition={{ duration: 0.3 }}
+      className="cursor-pointer"
     >
-      {children}
-    </Link>
+      <Link
+        {...rest}
+        className="text-neutral-700 dark:text-neutral-200 hover:text-[#8A90A2]"
+      >
+        {children}
+      </Link>
+    </motion.div>
   );
 };
