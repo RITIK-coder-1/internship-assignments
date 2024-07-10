@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu"; // Ensure this import path is correct
-import { cn } from "@/utils/cn"; // Ensure this import path is correct
+import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu"; 
+import { cn } from "@/utils/cn"; 
 
 export default function Nav({ darkMode, className }: { darkMode: boolean, className: string }) {
   return (
@@ -26,28 +26,28 @@ function Navbar({ className, darkMode }: { className?: string, darkMode: boolean
         <MenuItem setActive={setActive} active={active} item="Combo Pack" darkMode={darkMode}>
           <div className="text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
-              title="Algochurn"
-              href="https://algochurn.com"
-              src="/"
+              title="Interviews"
+              href="/"
+              src="https://www.shrm.org/adobe/dynamicmedia/deliver/dm-aid--8102e67a-af35-45d2-a902-02a14066175c/istock-1329328971-cstu6m.jpg?quality=82&preferwebp=true"
               description="Prepare for tech interviews like never before."
             />
             <ProductItem
-              title="Tailwind Master Kit"
-              href="https://tailwindmasterkit.com"
-              src="/"
-              description="Production ready Tailwind css components for your next project"
+              title="Projects"
+              href="/"
+              src="https://studentprojectguide.com/wp-content/uploads/2019/12/student-projetc.jpg"
+              description="Production ready Data Engineering projects"
             />
             <ProductItem
-              title="Moonbeam"
-              href="https://gomoonbeam.com"
-              src="/"
-              description="Never write from scratch again. Go from idea to blog in minutes."
+              title="High Quality Notes"
+              href="/"
+              src="https://imageio.forbes.com/specials-images/imageserve/60808d87824ab7edc3770486/Note-Pad-and-Pen-on-Yellow-background/960x0.jpg?height=474&width=711&fit=bounds"
+              description="Make notes from standard sources"
             />
             <ProductItem
-              title="Rogue"
-              href="https://userogue.com"
-              src="/"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
+              title="Recorded Content"
+              href="/"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR343q1WFPapbLgPUMfmJrgux0G96N1J6r90A&s"
+              description="In-depth videos for each topic"
             />
           </div>
         </MenuItem>
