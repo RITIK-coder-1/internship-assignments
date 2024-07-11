@@ -22,7 +22,7 @@ body {
 
 body.light-mode {
   background-color: #ffffff;
-  color: #000000;
+  color: #111111;
 }
 
 body.dark-mode {

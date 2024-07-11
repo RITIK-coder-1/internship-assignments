@@ -8,7 +8,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { useState, useEffect } from 'react';
 import Nav from '../mini-components/Nav'; 
 import Button from '../common/Button';
-
+import ThemeToggle from "../ui/ThemeToggle";
 
 const Header: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -53,6 +53,7 @@ const Header: React.FC = () => {
           <RxHamburgerMenu className="lg:hidden h-6 w-6 text-purple-600" />
         </div>
       </nav>
+      <ThemeToggle />
     </header>
   );
 };

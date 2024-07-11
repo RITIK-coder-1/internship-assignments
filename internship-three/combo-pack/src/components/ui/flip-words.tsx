@@ -1,6 +1,6 @@
-"use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion, LayoutGroup } from "framer-motion";
+// use client;
+import React, { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/utils/cn";
 
 export const FlipWords = ({
@@ -15,7 +15,6 @@ export const FlipWords = ({
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
     setCurrentWord(word);
@@ -23,10 +22,13 @@ export const FlipWords = ({
   }, [currentWord, words]);
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
+    if (!isAnimating) {
+      const timeout = setTimeout(() => {
         startAnimation();
       }, duration);
+
+      return () => clearTimeout(timeout);
+    }
   }, [isAnimating, duration, startAnimation]);
 
   return (
@@ -44,13 +46,6 @@ export const FlipWords = ({
           opacity: 1,
           y: 0,
         }}
-        transition={{
-          duration: 1,
-          ease: "easeInOut",
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
-        }}
         exit={{
           opacity: 0,
           y: -40,
@@ -60,7 +55,7 @@ export const FlipWords = ({
           position: "absolute",
         }}
         className={cn(
-          "z-10 inline-block relative text-neutral-900 dark:text-neutral-100 flex gap-2",
+          "inline-block relative text-neutral-900 dark:text-neutral-100 flex gap-2",
           className
         )}
         key={currentWord}
@@ -74,7 +69,7 @@ export const FlipWords = ({
               delay: index * 0.08,
               duration: 0.4,
             }}
-            className="inline-block"
+            className="inline-block text-[0.9rem] md:text-3xl lg:text-4xl xl:text-4xl"
           >
             {letter}
           </motion.span>
