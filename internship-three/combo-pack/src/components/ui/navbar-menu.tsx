@@ -18,17 +18,14 @@ export const MenuItem = ({
   active,
   item,
   children,
-  darkMode,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
-  darkMode: boolean;
 }) => {
   const itemStyle = item === "Combo Pack"
-    ? darkMode ? "text-white" : "text-black"
-    : "text-[#8A90A2] hover:text-rose-400";
+    ? "text-white" : "text-[#8A90A2] hover:text-rose-400"
 
   return (
     <div onMouseEnter={() => setActive(item)} className="relative">

@@ -20,15 +20,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-body.light-mode {
-  background-color: #ffffff;
-  color: #111111;
-}
-
-body.dark-mode {
-  background-color: #000000;
-  color: #ffffff;
-}
 
 @layer utilities {
   .text-balance {

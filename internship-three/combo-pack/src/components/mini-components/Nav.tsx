@@ -1,20 +1,19 @@
 "use client";
-import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "../ui/navbar-menu"; 
 import { cn } from "@/utils/cn"; 
 
-export default function Nav({ darkMode, className }: { darkMode: boolean, className: string }) {
+export default function Nav({ className }: { className: string }) {
   return (
-    <Navbar darkMode={darkMode} className={className}/>
+    <Navbar className={className}/>
   );
 }
 
-function Navbar({ className, darkMode }: { className?: string, darkMode: boolean }) {
-  const [active, setActive] = useState<string | null>(null);
+function Navbar({ className }: { className?: string }) {
+  
   return (
     <div className={cn("h-full", className)}>
-      <Menu setActive={setActive}>
-        <MenuItem setActive={setActive} active={active} item="Home" darkMode={darkMode}>
+      <Menu>
+        <MenuItem item="Home">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/">Modern Data Engineering</HoveredLink>
             <HoveredLink href="/">Courses</HoveredLink>
@@ -23,7 +22,7 @@ function Navbar({ className, darkMode }: { className?: string, darkMode: boolean
             <HoveredLink href="/">FAQs</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Combo Pack" darkMode={darkMode}>
+        <MenuItem item="Combo Pack">
           <div className="text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Interviews"
@@ -51,12 +50,12 @@ function Navbar({ className, darkMode }: { className?: string, darkMode: boolean
             />
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Playground" darkMode={darkMode}>
+        <MenuItem item="Playground">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/">Coming soon</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="All Courses" darkMode={darkMode}>
+        <MenuItem item="All Courses">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/">Python for Data Engineering</HoveredLink>
             <HoveredLink href="/">SQL for Data Engineering</HoveredLink>

@@ -38,7 +38,7 @@ const Header: React.FC = () => {
             className="transform hover:scale-110 transition-transform duration-300"
           />
         </div>
-        <Nav darkMode={darkMode} className="hidden lg:flex" />
+        <Nav className="hidden lg:flex" />
         <div className="flex items-center gap-5 pr-4 lg:pr-12">
           <div className="flex items-center gap-3">
             <FaRegMoon style={{ width: '24px', height: '24px', color: darkMode ? '#FB7185' : 'grey' }} />
